@@ -1,0 +1,57 @@
+.table-container {
+    width: 100%;
+    margin: 2rem auto;
+    font-family: Arial, sans-serif;
+    overflow-x: auto;
+  }
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1rem;
+  }
+  
+  th, td {
+    padding: 1rem;
+    border: 1px solid #ccc;
+    text-align: left;
+  }
+  
+  th {
+    cursor: pointer;
+    background-color: #f5f5f5;
+  }
+  
+  th.asc::after {
+    content: " ↑";
+  }
+  
+  th.desc::after {
+    content: " ↓";
+  }
+  
+  .table-actions input {
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    width: 100%;
+  }
+  
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+  }
+  
+  .pagination button {
+    padding: 0.5rem 1rem;
+    border: 1px solid #ccc;
+    background: #f5f5f5;
+    cursor: pointer;
+  }
+  
+  .pagination button.active {
+    background: #007bff;
+    color: #fff;
+    border-color: #007bff;
+  }
+  
