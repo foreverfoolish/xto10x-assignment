@@ -6,18 +6,36 @@ const FilterSection = ({ filters, setFilters, setIsColumnsModalOpen }) => {
 	};
 	return (
 		<div className="table-actions">
-			<input
-				type="text"
-				placeholder="Filter by Name"
-				onChange={(e) =>
-					handleFilterChange("name", { type: "text", value: e.target.value })
-				}
-			/>
-			<div>
-				Range filters on amount:
+            <div className="name-and-column">
+                <input
+                    type="text"
+                    placeholder="Filter by Name"
+                    className="name-filter"
+                    onChange={(e) =>
+                        handleFilterChange("name", { type: "text", value: e.target.value })
+                    }
+                />
+                <button
+                    onClick={() => setIsColumnsModalOpen(true)}
+                    style={{
+                        padding: "0.5rem 1rem",
+                        backgroundColor: "#007bff",
+                        color: "#fff",
+                        border: "none",
+                        borderRadius: "4px",
+                        cursor: "pointer",
+                    }}
+                    className="manage-column-button"
+                >
+                    Manage Columns
+                </button>
+            </div>
+			<div className="range-filters">
+				Range filters on amount:&nbsp;
 				<input
 					type="number"
 					placeholder="Min Amount"
+                    className="range-filter"
 					onChange={(e) =>
 						handleFilterChange("amount", {
 							type: "range",
@@ -29,6 +47,7 @@ const FilterSection = ({ filters, setFilters, setIsColumnsModalOpen }) => {
 				<input
 					type="number"
 					placeholder="Max Amount"
+                    className="range-filter"
 					onChange={(e) =>
 						handleFilterChange("amount", {
 							type: "range",
@@ -38,19 +57,6 @@ const FilterSection = ({ filters, setFilters, setIsColumnsModalOpen }) => {
 					}
 				/>
 			</div>
-			<button
-				onClick={() => setIsColumnsModalOpen(true)}
-				style={{
-					padding: "0.5rem 1rem",
-					backgroundColor: "#007bff",
-					color: "#fff",
-					border: "none",
-					borderRadius: "4px",
-					cursor: "pointer",
-				}}
-			>
-				Manage Columns
-			</button>
 		</div>
 	);
 };
